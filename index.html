@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <header class="container mx-auto font-raleway my-6">
+    <header class="container mx-auto font-raleway my-6 p-2">
         <!-- nav-bar -->
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -40,7 +40,7 @@
                   <li><a>Search</a></li>
                 </ul>
               </div>
-              <a class="btn btn-ghost text-xl lg:text-4xl lg:font-extrabold">Smart-Ticket</a>
+              <a class="btn btn-ghost text-xl lg:text-4xl lg:font-extrabold">P-Ticket</a>
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1 text-xl font-medium gap-14">
@@ -58,8 +58,8 @@
         
         <!-- banner section -->
         <div class="relative">
-            <div class="font-raleway text-center space-y-7 bg-[url(./images/banner.png)] bg-no-repeat bg-cover p-24 min-h-full">
-                <h1 class="lg:text-[64px] lg:font-extrabold text-white">End-to-End Travel with <br><span class="text-font-green">Smart Paribahan</span></h1>
+            <div class="font-raleway text-center space-y-7 bg-[url(./images/banner.png)] bg-no-repeat bg-cover p-4 lg:p-24 min-h-full">
+                <h1 class="text-4xl lg:text-[64px] lg:font-extrabold text-white">End-to-End Travel with <br><p class="text-font-green mt-6">P Paribahan</p></h1>
                 <p class="font-inter text-xl text-white lg:w-3/4 mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
                 <button class="btn bg-font-green text-xl font-bold border-0">Buy Tickets</button>
             </div>
@@ -90,8 +90,52 @@
             
         </div>
     </header>
-    <main>
+    <main class="p-2">
+        <!-- coupon section -->
+        <section class="container mx-auto my-28">
+            <h2 class="font-raleway text-4xl font-bold text-center">Best offers for you</h2>
+            <!-- coupon container -->
+            <div class="flex flex-col lg:flex-row gap-4 justify-between mt-12">
+                <div class="flex items-center gap-2 lg:gap-5 bg-[#FFBF0F] rounded-3xl ">
+                    <div class="p-3 lg:p-11">
+                        <h2 class="text-2xl lg:text-4xl font-extrabold ">15% OFF</h2>
+                        <p class="text-xl lg:text-2xl font-semibold">on your next purchase</p>
+                        <p class="text-xl text-color-gray">use by January 2024</p>
+                    </div>
+                    <div>
+                        <img src="./images/info-devider.png" alt="">
+                    </div>
+                    <div class="p-12">
+                        <h2 class="text-2xl lg:text-3xl font-bold font-raleway">NEW15</h2>
+                        <p class="text-xl text-color-gray">Coupon Code</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 lg:gap-5 bg-[#FFBF0F] rounded-3xl ">
+                    <div class="p-3 lg:p-11">
+                        <h2 class="text-2xl lg:text-4xl font-extrabold ">20% OFF</h2>
+                        <p class="text-xl lg:text-2xl font-semibold">on your next purchase</p>
+                        <p class="text-xl text-color-gray">use by January 2024</p>
+                    </div>
+                    <div>
+                        <img src="./images/info-devider.png" alt="">
+                    </div>
+                    <div class="p-12">
+                        <h2 class="text-2xl lg:text-3xl font-bold font-raleway">Couple20</h2>
+                        <p class="text-xl text-color-gray">Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-14">
+                <button class="btn border-1 text-xl font-bold bg-transparent border-green-400">See All Offers</button>
+            </div>
+        </section>
 
+        <!-- ticker reservation section -->
+        <section class="bg-[#F7F8F8] rounded-t-[80px] my-28">
+            <h2 class="text-center text-4xl font-bold pt-24 mb-5 ">P.H Paribahan</h2>
+            <p class="mx-auto text-center text-color-gray lg:w-[700px]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+
+        </section>
     </main>
     <footer>
 
