@@ -7,3 +7,8 @@
 .font-inter{
     font-family: "Inter", sans-serif;
 }
+
+
+hr {
+    border: 1px dashed lightgrey;
+}
