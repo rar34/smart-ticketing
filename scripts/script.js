@@ -110,3 +110,7 @@ couponButton.addEventListener('click', function(){
     }
     document.getElementById('coupon-field').value = '';
 });
+
+document.getElementById('btn-continue').addEventListener('click', function(){
+    window.location.href='index.html';
+})
