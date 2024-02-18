@@ -19,17 +19,17 @@ for (const seat of seats) {
         seat.style.backgroundColor = '#1DD100';
         seat.setAttribute('disabled', true);
         availableSeat = availableSeat - 1;
-        console.log(availableSeat)
+        // console.log(availableSeat)
         const seatName = event.target.innerText;
 
-        totalPrice = perSeatPrice * count;
-
-        grandTotal = grandTotal + perSeatPrice;
+        // totalPrice = perSeatPrice * count;
+        // grandTotal = grandTotal + perSeatPrice;
 
 
         // get coupon
         if (count === 4) {
             couponButton.removeAttribute('disabled');
+
         }
 
         if (count > 0) {
@@ -37,10 +37,13 @@ for (const seat of seats) {
         }
         if (count > 4) {
             seat.style.backgroundColor = '#F7F8F8';
-            totalPrice = totalPrice - 550;
+            // totalPrice = totalPrice - 550;
+
             return alert('You can not buy more than 4 ticket');
         }
         else {
+            totalPrice = perSeatPrice * count;
+            grandTotal = grandTotal + perSeatPrice;
             const tBody = document.getElementById('tbody');
             const tr = document.createElement('tr');
             const th1 = document.createElement('th');
@@ -106,7 +109,7 @@ couponButton.addEventListener('click', function () {
         p2.innerText = discount;
         discountField.appendChild(p);
         discountField.appendChild(p2);
-        
+
         setValueById('grand-total', grandTotal);
         couponButton.setAttribute('disabled', true);
         const couponContainer = document.getElementById('coupon-field-container');
@@ -125,7 +128,7 @@ document.getElementById('btn-continue').addEventListener('click', function () {
 nextButton.addEventListener('click', function () {
     //get user input data 
     const name = document.getElementById('user-name').value;
-    
+
     const phone = document.getElementById('user-phone').value;
     const email = document.getElementById('user-email').value;
     console.log(name, phone, email)
