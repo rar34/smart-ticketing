@@ -95,8 +95,8 @@ couponButton.addEventListener('click', function () {
         couponContainer.classList.add('hidden');
     }
     else if (couponCode === 'Couple 20') {
-        const discount = grandTotal * 20 / 100;
-        
+        const discount = totalPrice * 20 / 100;
+        grandTotal = totalPrice - discount;
         const discountField = document.getElementById('discount-field');
         const p = document.createElement('p');
         const p2 = document.createElement('p');
@@ -106,7 +106,7 @@ couponButton.addEventListener('click', function () {
         p2.innerText = discount;
         discountField.appendChild(p);
         discountField.appendChild(p2);
-        grandTotal = grandTotal - discount;
+        
         setValueById('grand-total', grandTotal);
         couponButton.setAttribute('disabled', true);
         const couponContainer = document.getElementById('coupon-field-container');
