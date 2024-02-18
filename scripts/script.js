@@ -77,20 +77,25 @@ couponButton.addEventListener('click', function () {
     const couponCode = document.getElementById('coupon-field').value;
     if (couponCode === 'NEW15') {
         const discount = grandTotal * 15 / 100;
-        console.log(discount)
+        
         const discountField = document.getElementById('discount-field');
         const p = document.createElement('p');
-        p.classList.add('text-xl', 'font-bold')
-        p.innerText = `Discount: ${discount}`;
+        const p2 = document.createElement('p');
+        p.classList.add('text-lg', 'font-bold');
+        p2.classList.add('text-lg', 'font-bold');
+        p.innerText = 'Discount:';
+        p2.innerText = discount;
         discountField.appendChild(p);
+        discountField.appendChild(p2);
         grandTotal = grandTotal - discount;
         setValueById('grand-total', grandTotal);
+        couponButton.setAttribute('disabled', true);
         const couponContainer = document.getElementById('coupon-field-container');
         couponContainer.classList.add('hidden');
     }
     else if (couponCode === 'Couple 20') {
         const discount = grandTotal * 20 / 100;
-        console.log(discount)
+        
         const discountField = document.getElementById('discount-field');
         const p = document.createElement('p');
         const p2 = document.createElement('p');
@@ -119,12 +124,14 @@ document.getElementById('btn-continue').addEventListener('click', function () {
 nextButton.addEventListener('click', function () {
     //get user input data 
     const name = document.getElementById('user-name').value;
-    console.log(name)
-    const phone = document.getElementById('user-user').value;
+    
+    const phone = document.getElementById('user-phone').value;
     const email = document.getElementById('user-email').value;
+    console.log(name, phone, email)
     const modal = document.getElementById('my_modal_1');
     if (name === '' || phone === '' || email === '') {
-        modal.classList.add('hidden');
+        // modal.classList.add('hidden');
         return alert(' fill all field')
     }
+    my_modal_1.showModal();
 });

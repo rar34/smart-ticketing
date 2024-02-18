@@ -67,7 +67,7 @@
         <!-- banner section -->
         <div class="relative">
             <div
-                class="font-raleway text-center space-y-7 bg-[url(./images/banner.png)] bg-no-repeat bg-cover p-4 lg:p-24 min-h-full">
+                class="font-raleway flex flex-col justify-center items-center text-center space-y-7 bg-[url(./images/banner.png)] bg-no-repeat bg-cover lg:h-[650px] rounded-3xl p-4 lg:p-24">
                 <h1 class="text-4xl lg:text-[64px] lg:font-extrabold text-white">End-to-End Travel with <br>
                     <p class="text-font-green mt-6">Smart Paribahan</p>
                 </h1>
@@ -327,12 +327,7 @@
                     <hr>
                     <!-- append seat class price -->
                     <div class="bg-[#F7F8F8] p-8 rounded-3xl mt-4">
-                        <!-- <div class="flex justify-between my-6">
-                            <p class="font-inter font-medium">Seat</p>
-                            <p class="font-inter font-medium">Class</p>
-                            <p class="font-inter font-medium">Price</p>
-                        </div> -->
-                        <!-- seat table cart -->
+                        
                         <div class="overflow-x-auto">
                             <table class="table">
                                 <!-- head -->
@@ -369,32 +364,34 @@
                         </div>
 
                     </div>
+                    <!-- User input form -->
                     <div class="my-6 p-8">
                         <label class="font-bold" for="">Passenger Name*</label><br>
                         <input id="user-name" type="text" placeholder="Enter your name"
                             class="input input-bordered w-full my-4" />
                         <label class="font-bold" for="">Phone number*</label><br>
-                        <input id="user-phone" type="text" placeholder="Enter your phone"
+                        <input id="user-phone" type="number" placeholder="Enter your phone"
                             class="input input-bordered w-full my-4" />
                         <label class="font-bold" for="">Email id</label><br>
                         <input id="user-email" type="email" placeholder="Enter your email"
                             class="input input-bordered w-full my-4" />
-                        <!-- <submit id="btn-next"
-                            class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white">
-                            Next</submit> -->
+                        
                         <!-- Open the modal using ID.showModal() method -->
-                        <button id="btn-next" class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white" onclick="my_modal_1.showModal()">Next</button>
+                        <button id="btn-next"
+                            class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white">Next</button>
                         <dialog id="my_modal_1" class="modal">
                             <div class="modal-box flex flex-col items-center font-raleway p-10">
                                 <img src="./images/success.png" alt="">
                                 <h3 class="font-bold text-lg font-green">Success</h3>
                                 <p class="font-bold py-4">Thank you for Booking Our Bus Seats.</p>
-                                <p class="font-bold pb-4"> We are working hard to find the best service and deals for you.</p>
-                                    <p class="text-color-gray">Shortly you will find a confirmation in your email.</p>
+                                <p class="font-bold pb-4"> We are working hard to find the best service and deals for
+                                    you.</p>
+                                <p class="text-color-gray">Shortly you will find a confirmation in your email.</p>
                                 <div class="modal-action">
                                     <form method="dialog">
                                         <!-- if there is a button in form, it will close the modal -->
-                                        <button id="btn-continue" class="btn bg-font-green text-white px-10 rounded-3xl">Continue</button>
+                                        <button id="btn-continue"
+                                            class="btn bg-font-green text-white px-10 rounded-3xl">Continue</button>
                                     </form>
                                 </div>
                             </div>
