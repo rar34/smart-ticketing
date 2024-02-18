@@ -23,16 +23,16 @@ for (const seat of seats) {
         const seatName = event.target.innerText;
 
         totalPrice = perSeatPrice * count;
-        
+
         grandTotal = grandTotal + perSeatPrice;
 
 
         // get coupon
-        if(count === 4){
+        if (count === 4) {
             couponButton.removeAttribute('disabled');
         }
-        
-        if(count > 0){
+
+        if (count > 0) {
             nextButton.removeAttribute('disabled');
         }
         if (count > 4) {
@@ -55,10 +55,7 @@ for (const seat of seats) {
             tr.classList.add('flex', 'justify-between')
         }
 
-        // get user input data 
-        // const name = document.getElementById('user-name').value;
-        // const phone = document.getElementById('user-user').value;
-        // const email = document.getElementById('user-email').value;
+
 
         setValueById('selected-seat', count);
         setValueById('total-price', totalPrice);
@@ -76,10 +73,10 @@ function setValueById(id, value) {
 }
 
 
-couponButton.addEventListener('click', function(){
+couponButton.addEventListener('click', function () {
     const couponCode = document.getElementById('coupon-field').value;
-    if(couponCode === 'NEW15'){
-        const discount = grandTotal * 15/100;
+    if (couponCode === 'NEW15') {
+        const discount = grandTotal * 15 / 100;
         console.log(discount)
         const discountField = document.getElementById('discount-field');
         const p = document.createElement('p');
@@ -91,26 +88,43 @@ couponButton.addEventListener('click', function(){
         const couponContainer = document.getElementById('coupon-field-container');
         couponContainer.classList.add('hidden');
     }
-    else if( couponCode === 'Couple 20' ){
-        const discount = grandTotal * 20/100;
+    else if (couponCode === 'Couple 20') {
+        const discount = grandTotal * 20 / 100;
         console.log(discount)
         const discountField = document.getElementById('discount-field');
         const p = document.createElement('p');
-        p.classList.add('text-xl', 'font-bold')
-        p.innerText = `Discount: ${discount}`;
+        const p2 = document.createElement('p');
+        p.classList.add('text-lg', 'font-bold');
+        p2.classList.add('text-lg', 'font-bold');
+        p.innerText = 'Discount:';
+        p2.innerText = discount;
         discountField.appendChild(p);
+        discountField.appendChild(p2);
         grandTotal = grandTotal - discount;
         setValueById('grand-total', grandTotal);
         couponButton.setAttribute('disabled', true);
         const couponContainer = document.getElementById('coupon-field-container');
         couponContainer.classList.add('hidden');
     }
-    else{
+    else {
         alert('Invalid coupon')
     }
     document.getElementById('coupon-field').value = '';
 });
 
-document.getElementById('btn-continue').addEventListener('click', function(){
-    window.location.href='index.html';
-})
+document.getElementById('btn-continue').addEventListener('click', function () {
+    window.location.href = 'index.html';
+});
+
+nextButton.addEventListener('click', function () {
+    //get user input data 
+    const name = document.getElementById('user-name').value;
+    console.log(name)
+    const phone = document.getElementById('user-user').value;
+    const email = document.getElementById('user-email').value;
+    const modal = document.getElementById('my_modal_1');
+    if (name === '' || phone === '' || email === '') {
+        modal.classList.add('hidden');
+        return alert(' fill all field')
+    }
+});
