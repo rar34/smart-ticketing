@@ -37,6 +37,7 @@ for (const seat of seats) {
         }
         if (count > 4) {
             seat.style.backgroundColor = '#F7F8F8';
+            totalPrice = totalPrice - 550;
             return alert('You can not buy more than 4 ticket');
         }
         else {
@@ -76,8 +77,8 @@ function setValueById(id, value) {
 couponButton.addEventListener('click', function () {
     const couponCode = document.getElementById('coupon-field').value;
     if (couponCode === 'NEW15') {
-        const discount = grandTotal * 15 / 100;
-        
+        const discount = totalPrice * 15 / 100;
+        grandTotal = totalPrice - discount;
         const discountField = document.getElementById('discount-field');
         const p = document.createElement('p');
         const p2 = document.createElement('p');
@@ -87,7 +88,7 @@ couponButton.addEventListener('click', function () {
         p2.innerText = discount;
         discountField.appendChild(p);
         discountField.appendChild(p2);
-        grandTotal = grandTotal - discount;
+        // grandTotal = grandTotal - discount;
         setValueById('grand-total', grandTotal);
         couponButton.setAttribute('disabled', true);
         const couponContainer = document.getElementById('coupon-field-container');
