@@ -327,25 +327,37 @@
                     <hr>
                     <!-- append seat class price -->
                     <div class="bg-[#F7F8F8] p-8 rounded-3xl mt-4">
-                        <div class="flex justify-between my-6">
+                        <!-- <div class="flex justify-between my-6">
                             <p class="font-inter font-medium">Seat</p>
                             <p class="font-inter font-medium">Class</p>
                             <p class="font-inter font-medium">Price</p>
-                        </div>
-                        <hr>
-                        <div class="flex justify-between my-6">
-                            <p class="font-inter font-medium">C2</p>
-                            <p class="font-inter font-medium">Economy</p>
-                            <p class="font-inter font-medium">550</p>
-                        </div>
+                        </div> -->
+                        <!-- seat table cart -->
+                        <div class="overflow-x-auto">
+                            <table class="table">
+                              <!-- head -->
+                              <thead>
+                                <tr class="text-xl font-semibold flex justify-between">
+                                  <!-- <th></th> -->
+                                  <th>Seat</th>
+                                  <th>Class</th>
+                                  <th>Price</th>
+                                </tr>
+                              </thead>
+                              <tbody id="tbody">
+                                
+                                
+                              </tbody>
+                            </table>
+                          </div>
                         <hr>
                         <div class="flex justify-between my-6">
                             <h4 class="font-bold font-inter">Total Price </h4>
-                            <h4 class="font-bold font-inter">BDT <span>550</span> </h4>
+                            <h4 class="font-bold font-inter">BDT <span id="total-price">550</span> </h4>
                         </div>
                         <div class="relative">
                             <input class="input w-full" type="text" placeholder="Have any coupon ?">
-                            <button class="absolute right-5 btn bg-font-green">Apply</button>
+                            <button id="btn-coupon" class="absolute right-5 btn bg-font-green">Apply</button>
                         </div>
                         <div class="flex justify-between my-6">
                             <h4 class="font-bold font-inter">Grand total </h4>
@@ -360,8 +372,7 @@
                         <input type="text" placeholder="Enter your phone" class="input input-bordered w-full my-4" />
                         <label class="font-bold" for="">Email id</label><br>
                         <input type="text" placeholder="Enter your email" class="input input-bordered w-full my-4" />
-                        <button
-                            class="px-8 py-5 rounded-xl bg-font-green text-center hover:bg-gray-400 w-full text-xl font-extrabold text-white">Next</button>
+                        <button id="btn-next" class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white">Next</button>
                     </div>
                     <div class="flex justify-around">
                         <a class="underline" href="">Terms and Conditions</a>
