@@ -321,7 +321,7 @@
 
                     </div>
                 </div>
-                
+
                 <div class="flex-1">
                     <h3 class="text-2xl font-semibold mb-4">Select Your Seat</h3>
                     <hr>
@@ -335,21 +335,22 @@
                         <!-- seat table cart -->
                         <div class="overflow-x-auto">
                             <table class="table">
-                              <!-- head -->
-                              <thead>
-                                <tr class="text-xl font-semibold flex justify-between">
-                                  <!-- <th></th> -->
-                                  <th>Seat</th>
-                                  <th>Class</th>
-                                  <th>Price</th>
-                                </tr>
-                              </thead>
-                              <tbody id="tbody">
-                                
-                                
-                              </tbody>
+                                <!-- head -->
+                                <thead>
+                                    <tr class="text-xl font-semibold flex justify-between">
+                                        <!-- <th></th> -->
+                                        <th>Seat <span id="selected-seat"
+                                                class="bg-font-green text-white px-2 rounded-xl">0</span></th>
+                                        <th>Class</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+
+
+                                </tbody>
                             </table>
-                          </div>
+                        </div>
                         <hr>
                         <div class="flex justify-between my-6">
                             <h4 class="font-bold font-inter">Total Price </h4>
@@ -358,7 +359,7 @@
                         <div id="discount-field">
 
                         </div>
-                        <div class="relative">
+                        <div id="coupon-field-container" class="relative ">
                             <input id="coupon-field" class="input w-full" type="text" placeholder="Have any coupon ?">
                             <button id="btn-coupon" class="absolute right-5 btn bg-font-green">Apply</button>
                         </div>
@@ -370,12 +371,31 @@
                     </div>
                     <div class="my-6 p-8">
                         <label class="font-bold" for="">Passenger Name*</label><br>
-                        <input type="text" placeholder="Enter your name" class="input input-bordered w-full my-4" />
+                        <input id="user-name" type="text" placeholder="Enter your name"
+                            class="input input-bordered w-full my-4" />
                         <label class="font-bold" for="">Phone number*</label><br>
-                        <input type="text" placeholder="Enter your phone" class="input input-bordered w-full my-4" />
+                        <input id="user-phone" type="text" placeholder="Enter your phone"
+                            class="input input-bordered w-full my-4" />
                         <label class="font-bold" for="">Email id</label><br>
-                        <input type="text" placeholder="Enter your email" class="input input-bordered w-full my-4" />
-                        <button id="btn-next" class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white">Next</button>
+                        <input id="user-email" type="email" placeholder="Enter your email"
+                            class="input input-bordered w-full my-4" />
+                        <!-- <submit id="btn-next"
+                            class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white">
+                            Next</submit> -->
+                        <!-- Open the modal using ID.showModal() method -->
+                        <button id="btn-next" class="btn rounded-xl bg-font-green text-center w-full text-xl font-extrabold text-white" onclick="my_modal_1.showModal()">Next</button>
+                        <dialog id="my_modal_1" class="modal">
+                            <div class="modal-box">
+                                <h3 class="font-bold text-lg">Hello!</h3>
+                                <p class="py-4">Press ESC key or click the button below to close</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
                     <div class="flex justify-around">
                         <a class="underline" href="">Terms and Conditions</a>

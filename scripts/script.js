@@ -16,24 +16,25 @@ for (const seat of seats) {
     seat.addEventListener('click', function (event) {
         count++;
 
-        seat.style.backgroundColor = 'green';
+        seat.style.backgroundColor = '#1DD100';
         seat.setAttribute('disabled', true);
         availableSeat = availableSeat - 1;
         console.log(availableSeat)
         const seatName = event.target.innerText;
 
         totalPrice = perSeatPrice * count;
-        // const grandTotalText = document.getElementById('grand-total').innerText;
-        // let grandTotal = parseInt(grandTotalText);
-        grandTotal = grandTotal + perSeatPrice;
-        // get coupon
         
+        grandTotal = grandTotal + perSeatPrice;
 
+
+        // get coupon
         if(count === 4){
             couponButton.removeAttribute('disabled');
         }
         
-
+        if(count > 0){
+            nextButton.removeAttribute('disabled');
+        }
         if (count > 4) {
             seat.style.backgroundColor = '#F7F8F8';
             return alert('You can not buy more than 4 ticket');
@@ -54,8 +55,12 @@ for (const seat of seats) {
             tr.classList.add('flex', 'justify-between')
         }
 
+        // get user input data 
+        // const name = document.getElementById('user-name').value;
+        // const phone = document.getElementById('user-user').value;
+        // const email = document.getElementById('user-email').value;
 
-
+        setValueById('selected-seat', count);
         setValueById('total-price', totalPrice);
         setValueById('grand-total', grandTotal);
         setValueById('available-seat', availableSeat)
@@ -83,7 +88,25 @@ couponButton.addEventListener('click', function(){
         discountField.appendChild(p);
         grandTotal = grandTotal - discount;
         setValueById('grand-total', grandTotal);
+        const couponContainer = document.getElementById('coupon-field-container');
+        couponContainer.classList.add('hidden');
+    }
+    else if( couponCode === 'Couple 20' ){
+        const discount = grandTotal * 20/100;
+        console.log(discount)
+        const discountField = document.getElementById('discount-field');
+        const p = document.createElement('p');
+        p.classList.add('text-xl', 'font-bold')
+        p.innerText = `Discount: ${discount}`;
+        discountField.appendChild(p);
+        grandTotal = grandTotal - discount;
+        setValueById('grand-total', grandTotal);
         couponButton.setAttribute('disabled', true);
+        const couponContainer = document.getElementById('coupon-field-container');
+        couponContainer.classList.add('hidden');
+    }
+    else{
+        alert('Invalid coupon')
     }
     document.getElementById('coupon-field').value = '';
 });
