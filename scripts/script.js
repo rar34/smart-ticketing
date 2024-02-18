@@ -19,11 +19,7 @@ for (const seat of seats) {
         seat.style.backgroundColor = '#1DD100';
         seat.setAttribute('disabled', true);
         availableSeat = availableSeat - 1;
-        // console.log(availableSeat)
         const seatName = event.target.innerText;
-
-        // totalPrice = perSeatPrice * count;
-        // grandTotal = grandTotal + perSeatPrice;
 
 
         // get coupon
